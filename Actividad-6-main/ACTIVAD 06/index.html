@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Buen Comer - Restaurante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar__container">
+            <a href="#" class="navbar__logo">El Buen Comer</a>
+            <ul class="navbar__menu" id="navbarMenu">
+                <li><a href="#inicio" class="navbar__link">Inicio</a></li>
+                <li><a href="#menu" class="navbar__link">Menú</a></li>
+                <li><a href="#nosotros" class="navbar__link">Nosotros</a></li> <li><a href="#contacto" class="navbar__link">Contacto</a></li>
+            </ul>
+            <button class="navbar__toggle" id="navbarToggle">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero__content">
+            <h1 class="hero__title">El Buen Comer</h1>
+            <p class="hero__subtitle">Sabores auténticos de Manabí y más en cada plato</p>
+            <a href="#menu" class="btn btn--primary">Ver Menú</a>
+        </div>
+    </section>
+
+    <div class="container mt-3">
+        <div class="alert alert--success" id="welcomeAlert">
+            <strong>¡Bienvenidos!</strong> Disfruta de nuestros platos tradicionales preparados con amor.
+        </div>
+    </div>
+
+    <section class="section" id="menu">
+        <div class="container">
+            <h2 class="section__title">Nuestro Menú</h2>
+            <div class="grid grid--3">
+                <div class="card">
+                    <img src="BOLLO.webp" alt="Bollo de El Buen Comer" width="369">
+                    <div class="card__content">
+                        <h3 class="card__title">Bollo</h3>
+                        <p class="card__description">Suave masa de plátano verde majado y maní, rellena de jugoso pescado albacora en un sofrito tradicional.</p>
+                        <div class="card__price">$5.50</div>
+                        <button class="btn btn--primary mt-2" onclick="window.location.href='pedir.html?producto=Bollo'">Pedir</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="SECO.png" alt="Seco de Gallina de El Buen Comer" width="369">
+                    <div class="card__content">
+                        <h3 class="card__title">Seco de Gallina</h3>
+                        <p class="card__description">Tradicional plato manabita con gallina criolla y culantro, cocinado a fuego lento hasta la perfección.</p>
+                        <div class="card__price">$7.50</div>
+                        <button class="btn btn--primary mt-2" onclick="window.location.href='pedir.html?producto=Seco'">Pedir</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="sushi.webp" alt="Plato de comida Sushi" width="354">
+                    <div class="card__content">
+                        <h3 class="card__title">Sushi</h3>
+                        <p class="card__description">Deliciosos rollos de sushi fresco con ingredientes selectos del mar, preparados al momento para ti.</p>
+                        <div class="card__price">$10.50</div>
+                        <button class="btn btn--primary mt-2" onclick="window.location.href='pedir.html?producto=Sushi'">Pedir</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="bolon.jpg" alt="Bolón de El Buen Comer" width="369">
+                    <div class="card__content">
+                        <h3 class="card__title">Bolón</h3>
+                        <p class="card__description">Una delicia ecuatoriana elaborada con plátano verde majado y relleno a tu elección: con cremoso queso fresco o con sabroso chicharrón de cerdo.</p>
+                        <div class="card__price">$4.50</div>
+                        <button class="btn btn--primary mt-2" onclick="window.location.href='pedir.html?producto=Bolón'">Pedir</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="tigrillo.jpeg" alt="Tigrillo de El Buen Comer" width="369">
+                    <div class="card__content">
+                        <h3 class="card__title">Tigrillo</h3>
+                        <p class="card__description">Suave majada de plátano verde, cuidadosamente mezclado con jugoso queso fresco derretido y crujientes trozos de chicharrón.</p>
+                        <div class="card__price">$6.50</div>
+                        <button class="btn btn--primary mt-2" onclick="window.location.href='pedir.html?producto=Tigrillo'">Pedir</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="ramen1.jpg" alt="Ramen de El Buen Comer" width="369">
+                    <div class="card__content">
+                        <h3 class="card__title">Ramen</h3>
+                        <p class="card__description">Descubre la auténtica esencia japonesa en nuestro Ramen. Preparamos un caldo robusto y lleno de umami, la base perfecta para nuestros fideos sedosos.</p>
+                        <div class="card__price">$8.50</div>
+                        <button class="btn btn--primary mt-2" onclick="window.location.href='pedir.html?producto=Ramen'">Pedir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="nosotros">
+        <div class="container">
+            <h2 class="section__title">Nuestra Historia: El Sabor de la Tradición</h2>
+            <p>En "El Buen Comer", nuestra pasión por la gastronomía es el alma de cada plato. Fundado en el corazón de Pedernales, Manabí, nos dedicamos a rescatar y reinventar los sabores auténticos de nuestra tierra, fusionándolos con toques internacionales que sorprenden y deleitan.</p>
+            <p>Cada ingrediente es seleccionado con esmero, priorizando la frescura y el apoyo a los productores locales. Desde el plátano verde de nuestros Tigrillos y Bolones, hasta los mariscos más frescos de nuestras costas, garantizamos una experiencia culinaria inigualable.</p>
+            <p>Más que un restaurante, somos un punto de encuentro para familias y amigos, un lugar donde cada visita se convierte en un recuerdo inolvidable. Te invitamos a ser parte de nuestra historia, a saborear la tradición con un toque de innovación y a disfrutar de la calidez que nos caracteriza.</p>
+        </div>
+    </section>
+
+    <section class="section" id="contacto">
+        <div class="container">
+            <h2 class="section__title">Contáctanos</h2>
+            <p>¿Listo para vivir la experiencia "El Buen Comer"? ¡Estamos aquí para atenderte!</p>
+            <p>Puedes encontrarnos en:</p>
+            <address>
+                Av. Eloy Alfaro y Carchi, Pedernales, Manabí, Ecuador<br>
+                Teléfono: <a href="tel:+593993000657">+593 993000657</a><br>
+                Email: <a href="jmacias8827@utm.edu.ec">info@elbuencomer.com</a>
+                            <i class="fab fa-gmail"></i>
+            </address>
+
+            <div class="social-media">
+                <h4>Síguenos en nuestras redes sociales:</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/jordinjacinto.maciasloor" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/593993000657" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@TuUsuarioDeTikTok" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/jordinmaciasloor?igsh=MWRpOGJlMTdjamFwbg==" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 El Buen Comer. Todos los derechos reservados "Estudiante de UTM".</p>
+            <p>&copy; JORMA.</p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

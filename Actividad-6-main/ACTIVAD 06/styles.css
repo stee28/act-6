@@ -1,0 +1,534 @@
+/* Estilos generales y reset */
+body {
+    font-family: 'Montserrat', sans-serif; /* Usando la nueva fuente */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('images/Captura de pantalla 2025-07-09 202328.jpg'); /* Tu imagen de fondo */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+    position: sticky; /* Sticky navbar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar__logo {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif; /* Fuente para el logo */
+}
+
+.navbar__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar__menu li {
+    margin-left: 30px;
+}
+
+.navbar__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+    color: #e44d26; /* Color de acento */
+}
+
+.navbar__toggle {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 60vh; /* Altura de la sección hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-image: url('fondo1.jpg'); /* Imagen específica para el hero */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+.hero::before { /* Capa oscura sobre la imagen para mejorar legibilidad */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero__title {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* General Section Styling */
+.section {
+    padding: 60px 0; /* Mayor padding vertical */
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco casi opaco para el contenido */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section__title {
+    text-align: center;
+    color: #e44d26;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Alerta de bienvenida */
+.alert {
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert--success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Grid para el menú */
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Recorta la imagen para que cubra el área */
+    display: block;
+}
+
+.card__content {
+    padding: 25px;
+    flex-grow: 1; /* Permite que el contenido se expanda */
+    display: flex;
+    flex-direction: column;
+}
+
+.card__title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card__description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que la descripción ocupe el espacio */
+}
+
+.card__price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e44d26;
+    margin-bottom: 15px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    border: none; /* Asegura que no haya bordes por defecto */
+}
+
+.btn--primary {
+    background-color: #e44d26;
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background-color: #ff6f40;
+}
+
+/* Margen superior para elementos */
+.mt-3 { margin-top: 15px; }
+.mt-2 { margin-top: 10px; }
+
+
+/* Estilos de las secciones Nosotros y Contacto */
+.section#nosotros p,
+.section#contacto p,
+.section#contacto address {
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify; /* Justifica el texto principal */
+}
+
+.section#contacto p,
+.section#contacto address {
+    text-align: center; /* Centra el texto de contacto */
+}
+
+.section#contacto address a {
+    color: #e44d26;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section#contacto address a:hover {
+    text-decoration: underline;
+}
+
+/* Redes Sociales */
+.social-media {
+    margin-top: 40px;
+}
+
+.social-media h4 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Para que los íconos se envuelvan en pantallas pequeñas */
+}
+
+.social-links a {
+    color: #333;
+    font-size: 3rem; /* Íconos más grandes */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-8px); /* Efecto al pasar el mouse */
+}
+
+/* Colores específicos para redes sociales */
+.social-links a .fa-facebook-f:hover { color: #3b5998; }
+.social-links a .fa-whatsapp:hover { color: #25d366; }
+.social-links a .fa-tiktok:hover { color: #000000; }
+.social-links a .fa-instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto; /* Empuja el footer al final de la página */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Permanece en la misma posición al desplazarse */
+    z-index: 2000; /* Alto z-index para que esté sobre todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar desplazamiento si el contenido es demasiado grande */
+    background-color: rgba(0,0,0,0.6); /* Fondo semi-transparente oscuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    max-width: 500px; /* Ancho máximo del modal */
+    width: 90%; /* Ancho responsivo */
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-dish-image {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#modalDishTitle {
+    font-size: 2.2rem;
+    color: #e44d26;
+    margin-bottom: 10px;
+}
+
+#modalDishDescription {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#modalDishPrice {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .hero__title {
+        font-size: 3rem;
+    }
+    .hero__subtitle {
+        font-size: 1.2rem;
+    }
+    .grid--3 {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Más pequeñas las cards */
+    }
+    .section__title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar__menu {
+        display: none; /* Oculta el menú en pantallas pequeñas */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    .navbar__menu.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+    .navbar__menu li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .navbar__menu li:last-child {
+        border-bottom: none;
+    }
+    .navbar__toggle {
+        display: block; /* Muestra el botón de toggle */
+    }
+
+    .hero {
+        height: 50vh;
+    }
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+    .section__title {
+        font-size: 1.8rem;
+    }
+    .social-links a {
+        font-size: 2.2rem;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+    #modalDishTitle {
+        font-size: 1.8rem;
+    }
+    #modalDishPrice {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar__logo {
+        font-size: 1.5rem;
+    }
+    .hero__title {
+        font-size: 2rem;
+    }
+    .hero__subtitle {
+        font-size: 0.9rem;
+    }
+    .card__title {
+        font-size: 1.5rem;
+    }
+    .social-links a {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animaciones para el menú móvil */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejoras adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .navbar__container {
+        padding: 0 15px;
+    }
+    
+    .navbar__logo {
+        font-size: 1.5rem;
+    }
+    
+    .navbar__toggle {
+        font-size: 1.8rem;
+    }
+    
+    .navbar__link {
+        font-size: 1.1rem;
+        padding: 16px 15px;
+    }
+}
