@@ -1,95 +1,97 @@
-// Funcionalidad del menú hamburguesa para El Buen Comer
-document.addEventListener('DOMContentLoaded', function() {
-    const navbarToggle = document.getElementById('navbarToggle');
-    const navbarMenu = document.getElementById('navbarMenu');
-    const navbarLinks = document.querySelectorAll('.navbar__link');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Buen Comer - Restaurante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    // Función para alternar el menú
-    function toggleMenu() {
-        navbarMenu.classList.toggle('active');
-        
-        // Cambiar el icono del botón hamburguesa
-        if (navbarMenu.classList.contains('active')) {
-            navbarToggle.innerHTML = '✕'; // Cambiar a X cuando está abierto
-        } else {
-            navbarToggle.innerHTML = '☰'; // Cambiar a hamburguesa cuando está cerrado
-        }
-    }
+    <nav class="navbar" id="navbar">
+        <div class="navbar__container">
+            <a href="#" class="navbar__logo">El Buen Comer</a>
+            <ul class="navbar__menu" id="navbarMenu">
+                <li><a href="#inicio" class="navbar__link">Inicio</a></li>
+                <li><a href="#menu" class="navbar__link">Menú</a></li>
+                <li><a href="#nosotros" class="navbar__link">Nosotros</a></li>
+                <li><a href="#contacto" class="navbar__link">Contacto</a></li>
+            </ul>
+            <button class="navbar__toggle" id="navbarToggle">☰</button>
+        </div>
+    </nav>
 
-    // Evento click en el botón hamburguesa
-    navbarToggle.addEventListener('click', toggleMenu);
+    <section class="hero" id="inicio">
+        <div class="hero__content">
+            <h1 class="hero__title">El Buen Comer</h1>
+            <p class="hero__subtitle">Sabores auténticos de Manabí y más en cada plato</p>
+            <a href="#menu" class="btn btn--primary">Ver Menú</a>
+        </div>
+    </section>
 
-    // Cerrar el menú cuando se hace click en un enlace (para navegación suave)
-    navbarLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (navbarMenu.classList.contains('active')) {
-                navbarMenu.classList.remove('active');
-                navbarToggle.innerHTML = '☰';
-            }
-        });
-    });
+    <div class="container mt-3">
+        <div class="alert alert--success" id="welcomeAlert">
+            <strong>¡Bienvenidos!</strong> Disfruta de nuestros platos tradicionales preparados con amor.
+        </div>
+    </div>
 
-    // Cerrar el menú cuando se hace click fuera de él
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = navbarToggle.contains(event.target) || navbarMenu.contains(event.target);
-        
-        if (!isClickInsideNav && navbarMenu.classList.contains('active')) {
-            navbarMenu.classList.remove('active');
-            navbarToggle.innerHTML = '☰';
-        }
-    });
+    <section class="section" id="menu">
+        <div class="container">
+            <h2 class="section__title">Nuestro Menú</h2>
+            <div class="grid grid--3">
+                <!-- Aquí puedes insertar las cartas de productos como en la versión anterior -->
+            </div>
+        </div>
+    </section>
 
-    // Cerrar el menú cuando se redimensiona la ventana a pantalla grande
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            navbarMenu.classList.remove('active');
-            navbarToggle.innerHTML = '☰';
-        }
-    });
+    <section class="section" id="nosotros">
+        <div class="container">
+            <h2 class="section__title">Nuestra Historia: El Sabor de la Tradición</h2>
+            <p>En "El Buen Comer", nuestra pasión por la gastronomía es el alma de cada plato. Fundado en el corazón de Esmeraldas, nos dedicamos a rescatar y reinventar los sabores auténticos de nuestra tierra, fusionándolos con toques internacionales que sorprenden y deleitan.</p>
+            <p>Cada ingrediente es seleccionado con esmero, priorizando la frescura y el apoyo a los productores locales. Desde el plátano verde de nuestros Tigrillos y Bolones, hasta los mariscos más frescos de nuestras costas, garantizamos una experiencia culinaria inigualable.</p>
+            <p>Más que un restaurante, somos un punto de encuentro para familias y amigos, un lugar donde cada visita se convierte en un recuerdo inolvidable. Te invitamos a ser parte de nuestra historia, a saborear la tradición con un toque de innovación y a disfrutar de la calidez que nos caracteriza.</p>
+        </div>
+    </section>
 
-    // Funcionalidad adicional para navegación suave
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    <section class="section" id="contacto">
+        <div class="container">
+            <h2 class="section__title">Contáctanos</h2>
+            <p>¿Listo para vivir la experiencia "El Buen Comer"? ¡Estamos aquí para atenderte!</p>
+            <p>Puedes encontrarnos en:</p>
+            <address>
+                Calle Esme, Esmeraldas, Ecuador<br>
+                Teléfono: <a href="tel:+593981234567">+593 981234567</a><br>
+                Email: <a href="mailto:steeven@elbuencomer.com">steeven@elbuencomer.com</a> <i class="fab fa-gmail"></i>
+            </address>
 
-    // Efecto de scroll para la navbar
-    let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-});
+            <div class="social-media">
+                <h4>Síguenos en nuestras redes sociales:</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/593981234567" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-// Funcionalidad para el modal de platos (si decides agregarlo más adelante)
-function openModal(dishName, dishDescription, dishPrice, dishImage) {
-    // Esta función puede ser usada para mostrar detalles de los platos en un modal
-    console.log(`Abriendo modal para: ${dishName}`);
-}
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 El Buen Comer. Todos los derechos reservados. Sitio creado por <strong>Steeven Moreira</strong>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
